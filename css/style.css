@@ -817,13 +817,18 @@ header {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  counter-reset: section;
 }
 
 .team-info__steps-item {
   max-width: 285px;
 }
 
-.team-info__steps-number {
+.team-info__steps-item::before {
+  display: block;
+  counter-increment: section;
+  content: counter(section);
   margin: 0 auto;
   margin-bottom: 20px;
   padding: 20px;
@@ -836,6 +841,20 @@ header {
   border-radius: 50%;
   background-color: #8d7370;
 }
+
+/*.team-info__steps-number {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 70px;
+  height: 70px;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 30px;
+  color: #fff;
+  border-radius: 50%;
+  background-color: #8d7370;
+}*/
 
 .team-info__steps-descr {
   font-size: 18px;
